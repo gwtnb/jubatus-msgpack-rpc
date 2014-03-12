@@ -15,8 +15,8 @@ AS_IF([test "x$enable_optimized" != "xno"], [
 	# Use default flag with -O3 -Wall
 	save_c_flags="$CFLAGS"
 	save_cxx_flags="$CXXFLAGS"
-	CFLAGS="-Wall"
-	CXXFLAGS="-Wall"
+	CFLAGS="$CFLAGS -Wall"
+	CXXFLAGS="$CXXFLAGS -Wall"
 	AC_LANG_PUSH([C])
 	AX_CHECK_LINK_FLAG(-O4, [CFLAGS="-O4 $CFLAGS"], [CFLAGS="$CFLAGS $save_c_flags"])
 	AC_LANG_POP([C])
